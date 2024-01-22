@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JSON 数据</title>
+</head>
+<body>
+  <script>
+    var roomId = '23698286';
+
+    // 创建 XMLHttpRequest 对象
+    var xhr = new XMLHttpRequest();
+
+    // 处理响应
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var data = JSON.parse(xhr.responseText);
+        console.log(data);
+        // 在这里处理返回的 JSON 数据
+      }
+    };
+
+    // 发送 GET 请求
+    function sendRequest() {
+      roomId = 'YOUR_ROOM_ID'; // 替换为您的房间 ID
+      var url = 'https://api.live.bilibili.com/xlive/web-room/v1/dM/gethistory?roomid=' + roomId;
+      xhr.open('GET', url, true);
+      xhr.send();
+    }
+
+    // 页面加载完成后发送请求
+    window.onload = sendRequest;
+  </script>
+</body>
+</html>

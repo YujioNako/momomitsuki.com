@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>空Frame</title>
+    <style>
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            background-color: #E1BEE7;
+            padding: 1% 3%;
+            border-radius: 15px;  
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.6;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+            ul li {
+                line-height: 2.3
+            }
+
+        a {
+            color: #20a53a
+        }
+        
+        @media only screen and (max-width: 960px) {
+            .container {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <center>
+            <h3>Notice: 点击后才会加载直播间画面</h3>
+            <h4 id="live_info">直播间状态拉取中</h4>
+        </center>
+    </div>
+    <iframe src="//vtbs.moe/BiliChat/index.html?pure=false&room=23698286" width="80%" frameborder="no" framespacing="0" scrolling="no" allow="encrypted-media" allowfullscreen="true"></iframe>
+    <script>
+        fetch('https://api.vtbs.moe/v1/detail/2073012767')
+          .then(response => response.json())
+          .then(data => {
+            // 判断给定的值是否在数组中
+            var isLiving = data.liveStartTime!==0;
+        
+            // 打印结果
+            if (isLiving) {
+                document.getElementById('live_info').innerHTML = `${data.title} 正在进行<br>(开始于${new Date(data.liveStartTime).toLocaleString()})`;
+            } else {
+                document.getElementById('live_info').innerHTML = `主播目前尚未开播`;
+            }
+          })
+          .catch(error => {
+            console.log('发生错误:', error);
+          });
+    </script>
+</body>
+</html>
