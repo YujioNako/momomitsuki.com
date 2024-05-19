@@ -197,7 +197,7 @@ function about() {
 function readme() {
     window.open('https://www.bilibili.com/read/cv19304643', '_blank')
 }
-function readme() {
+function carrd() {
     window.open('https://lit.link/en/me2ki', '_blank')
 }
 function moepedia() {
