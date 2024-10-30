@@ -1,3 +1,13 @@
+<center class="">
+<h2>
+【二周年纪念直播预告】
+<br>
+<small>Momo Mitsuki 2nd Anniversary Live</small>
+</h2>
+10月30日晚7点 将进行momo的二周年直播！请多多支持！
+<img width="80%" style="margin:10px;" referrerpolicy="no-referrer" crossorigin="anonymous" src="https://i0.hdslb.com/bfs/new_dyn/979d11ea6708f30a8436e2ff454043bf2073012767.png">
+</center>
+<hr>
 <center class="gray-overlay">
 <h2>
 【3D披露直播正式预告】
